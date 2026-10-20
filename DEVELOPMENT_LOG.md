@@ -40,6 +40,19 @@ These integrations must preserve the safety rules in
 
 ## Change history
 
+### 2026-10-20 — Published standalone AEOS repository
+
+- **Area:** repository setup
+- **Change:** Initialized a standalone Git repository inside the `AEOS` folder,
+  created the `main` branch, configured
+  `https://github.com/harsh99887766/AEOS.git` as `origin`, and pushed the
+  initial project snapshot.
+- **Reason:** Separated AEOS from the unrelated parent workspace repository so
+  it can be developed and shared independently.
+- **Validation:** Confirmed that the `main` branch was created on the remote
+  and tracks `origin/main`.
+- **Follow-up:** Use the AEOS repository root for future commits and pushes.
+
 ### 2026-10-20 — Initial AEOS scaffold
 
 - **Area:** repository structure and application foundation
