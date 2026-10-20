@@ -40,6 +40,18 @@ These integrations must preserve the safety rules in
 
 ## Change history
 
+### 2026-10-20 — Documented Windows package setup
+
+- **Area:** developer experience
+- **Change:** Clarified the Windows quick-start commands and documented why
+  `python -m pip install -e ".[dev]"` is required before starting Uvicorn.
+- **Reason:** A `src`-layout project is not importable merely because Uvicorn
+  is installed. The AEOS package and its dependencies must be installed into
+  the same Python environment.
+- **Validation:** Installed AEOS into the reported `C:\DataScience` Python
+  environment and verified that the package can be imported there.
+- **Follow-up:** Use `python -m pip` and `python -m uvicorn` consistently.
+
 ### 2026-10-20 — Published standalone AEOS repository
 
 - **Area:** repository setup

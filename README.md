@@ -46,12 +46,36 @@ python -m venv .venv
 
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
-copy .env.example .env
+Copy-Item .env.example .env
 make test
-make run
+python -m uvicorn aeos.main:app --reload
 ```
 
 The API is then available at <http://127.0.0.1:8000/docs>.
+
+### Windows troubleshooting
+
+Always install and run tools through the same Python interpreter:
+
+```powershell
+python -m pip install -e ".[dev]"
+python -m uvicorn aeos.main:app --reload
+```
+
+The `-e` option installs AEOS in editable mode, which makes the `aeos` package
+inside `src/` importable. Installing only `uvicorn` is not enough; it gives
+you the web-server command but does not install this project or its
+dependencies.
+
+If `python` and `pip` point to different installations, check them with:
+
+```powershell
+python -c "import sys; print(sys.executable)"
+python -m pip --version
+```
+
+Both commands should refer to the same Python installation. Prefer
+`python -m pip` instead of calling `pip` directly.
 
 ## Safety boundary
 
