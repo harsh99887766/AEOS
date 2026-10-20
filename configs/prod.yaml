@@ -1,0 +1,3 @@
+environment: prod
+log_level: INFO
+max_agent_retries: 3
